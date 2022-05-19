@@ -12,7 +12,7 @@ Candidates successfully passing the assessment stage will be invited for an inte
 # 1. Object Orientated Programming
 Please complete the problems in Java or another Object Orientated language.
 
-Use your favorite IDE to create and test your solutions, including any testing descriptions/evidence.
+Use your favourite IDE to create and test your solutions, including any testing descriptions/evidence.
 
 Please provide your solution as a runnable and testable project, either as a public GitHub repo or zipped project files, so that they can be imported and tested in an IDE.
 
@@ -94,18 +94,18 @@ We are not asking for a prototype solution, descriptions, diagrams and pseudo co
     * login is required for the user to save a new note
 * The web app maintains a user session
 
-1. Describe the high-level designShow the main note app components and the logical interactions that will fulfill the requirements.
-2. Web App UIProvide a wireframe design of the note web app that will fulfill the requirements.
+1. Describe the high-level designShow the main note app components and the logical interactions that will fulfil the requirements.
+2. Web App UIProvide a wireframe design of the note web app that will fulfil the requirements.
 
 * Consider what UI components are required and how these interact with the other components.
 * What (if any) validation is required?
 
 3. Data Model
-Describe how a note will be modeled
+Describe how a note will be modelled
 * consider the required properties
 
 4. Restful API
-Describe the Restful API required to fulfill the note app.
+Describe the Restful API required to fulfil the note app.
 * how would the web app get the user’s notes?
 * how would the web app save a user note?
 * what are the URLs for the note resource(s)?
