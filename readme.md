@@ -65,7 +65,8 @@ We operate small cross-functional scrum teams as such, it’s important to us th
 
 From this exercise, we are looking to understand how well you:
 
-* Understand the problem spaceUnderstand any technical limitations
+* Understand the problem space
+* Understand any technical limitations
 * Identify any assumptions
 * Design a solution
 * Present that solution
