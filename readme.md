@@ -51,12 +51,15 @@ standardizedTitle = n.standardize(jt);
 Provided with an array of integers of variable length (int[] input), implement a process that calculates the (1) median, (2) mean, (3) mode, and (4) range for the array and outputs these four values to the command line.
 
 Here is some sample code that would call your code:
+
 ``` Java
 //load the results from a big computation into mybigarray
 int[] mybigarray = generateSomeHugeArray(); 
 //now print out some basic stats on the array
-YourClass arrayManipulator = new YourClass(); arrayManipulator.getStats(mybigarray);
+YourClass arrayManipulator = new YourClass();
+arrayManipulator.getStats(mybigarray);
 ```
+
 # 2. Web App Restful API System Design
 We operate small cross-functional scrum teams as such, it’s important to us that you can understand requirements and design solutions to business problems
 
