@@ -5,9 +5,11 @@ import java.util.Random;
 import feefo_assessment.OOP.ArrayManipulator;
 import feefo_assessment.OOP.JobStandardizer;
 
-public class App {
+public class Main {
     public static void main(String[] args) {
 
+        // 1.1 Standardizing Job Titles process
+        
         String jt = "Java engineer";
         JobStandardizer s = new JobStandardizer();
         String standardizedTitle = s.standardize(jt);
@@ -21,6 +23,8 @@ public class App {
         standardizedTitle = s.standardize(jt); 
         //output standardizedTitle
 
+
+        // 1.2 Number statistics
 
         //load the results from a big computation into mybigarray
         int[] mybigarray = generateSomeHugeArray(); 
