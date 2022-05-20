@@ -6,10 +6,6 @@ import feefo_assessment.OOP.ArrayManipulator;
 import feefo_assessment.OOP.JobStandardizer;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
-
     public static void main(String[] args) {
 
         String jt = "Java engineer";
