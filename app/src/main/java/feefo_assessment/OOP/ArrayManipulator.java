@@ -14,38 +14,44 @@ public class ArrayManipulator {
     private int range;
 
     // Setters
-    public void setMedian(double median){
+    public void setMedian(double median) {
         this.median = median;
     }
-    public void setMean(double mean){
+
+    public void setMean(double mean) {
         this.mean = mean;
     }
-    public void setModes(List<Integer> modes){
+
+    public void setModes(List<Integer> modes) {
         this.modes = modes;
     }
-    public void setRange(int range){
+
+    public void setRange(int range) {
         this.range = range;
     }
 
     // Getters
-    public double getMedian(){
+    public double getMedian() {
         return this.median;
     }
-    public double getMean(){
+
+    public double getMean() {
         return this.mean;
     }
-    public List<Integer> getModes(){
+
+    public List<Integer> getModes() {
         return this.modes;
     }
-    public int getRange(){
+
+    public int getRange() {
         return this.range;
     }
 
-    public void printStats(){
+    public void printStats() {
         System.out.println("Median of array: " + this.median);
         System.out.println("Mean of array: " + this.mean);
-        
-        if(this.modes.size() > 1){
+
+        if (this.modes.size() > 1) {
             int numberOfModes = this.modes.size();
             System.out.println("There are " + numberOfModes + "modes. They are:");
             for (Integer mode : modes) {
@@ -58,28 +64,32 @@ public class ArrayManipulator {
     }
 
     /**
-     * Calculates the Median, Mean, Mode and range for an int array then prints the values to the console
+     * Calculates the Median, Mean, Mode and range for an int array then prints the values to the
+     * console
+     * 
      * @param input an array of int's
      */
-    public void getStats(int[] input){
-        
+    public void getStats(int[] input) {
+
         this.setMedian(calculateMedian(input));
-        
+
         this.setMean(calculateMean(input));
-           
+
         this.setModes(calculateMode(input));
-        
+
         this.setRange(calculateRange(input));
-       
-        //print stats
+
+        // print stats
         this.printStats();
     }
 
     /**
-     * Calculates the median of an array of int's
-     * Median is the middle number of a set, so this get the middle number in the array when sorted from smallest to largest.
-     * If there is an even number of items in the set, there will be two numbers in the middle. The median is the number that is half way between these two numbers.
-     * input array is cloned as to not mutate the input should it be needed in its original form elsewhere.
+     * Calculates the median of an array of int's Median is the middle number of a set, so this get
+     * the middle number in the array when sorted from smallest to largest. If there is an even
+     * number of items in the set, there will be two numbers in the middle. The median is the number
+     * that is half way between these two numbers. input array is cloned as to not mutate the input
+     * should it be needed in its original form elsewhere.
+     * 
      * @param input array of int's
      * @return a double of the median
      */
@@ -89,20 +99,22 @@ public class ArrayManipulator {
         Arrays.sort(sorted);
         int middleOfArray = (int) Math.ceil(sorted.length / 2); // could be a fraction so round up
         double toReturn;
-        if(sorted.length % 2 == 0){
-            // if even number of elements then the median is the number between the 2 bits in the middle
+        if (sorted.length % 2 == 0) {
+            // if even number of elements then the median is the number between the 2 bits in the
+            // middle
             double above = sorted[middleOfArray];
-            double below = sorted[middleOfArray-1];;
-            toReturn = ((above + below)/2);
-        } else{
+            double below = sorted[middleOfArray - 1];;
+            toReturn = ((above + below) / 2);
+        } else {
             toReturn = (sorted[middleOfArray]);
         }
         return toReturn;
     }
 
     /**
-     * Calculates the mean of an array of int's
-     * Mean is the sum of a set divided by the number in the set
+     * Calculates the mean of an array of int's Mean is the sum of a set divided by the number in
+     * the set
+     * 
      * @param input array of int's
      */
     public double calculateMean(int[] input) {
@@ -115,9 +127,10 @@ public class ArrayManipulator {
     }
 
     /**
-     * Calculates the range of an array of int's
-     * Range of a set is the difference between the smallest and highest numbers in the set.
-     * input array is cloned as to not mutate the input should it be needed in its original form elsewhere.
+     * Calculates the range of an array of int's Range of a set is the difference between the
+     * smallest and highest numbers in the set. input array is cloned as to not mutate the input
+     * should it be needed in its original form elsewhere.
+     * 
      * @param input array of int's
      */
     public int calculateRange(int[] input) {
@@ -129,39 +142,41 @@ public class ArrayManipulator {
         int largest = sorted[sorted.length - 1];
         return (largest - smallest);
     }
-    
+
     /**
-     * Calculates the mode of an array of int's
-     * Mode of a set is the most frequent number in that set. As there is a chance of more than one mode, a list is returned. returns null if there is an even distribution of all values.
+     * Calculates the mode of an array of int's Mode of a set is the most frequent number in that
+     * set. As there is a chance of more than one mode, a list is returned. returns null if there is
+     * an even distribution of all values.
+     * 
      * @param input array of int's
      * @return Integer list of modes.
      */
     public List<Integer> calculateMode(int[] input) {
         int mostFrequentValueCount = 0;
-        HashMap<Integer,Integer> groupedOccurencesMap = new HashMap<Integer,Integer>();
+        HashMap<Integer, Integer> groupedOccurencesMap = new HashMap<Integer, Integer>();
         for (int i : input) {
-            if(groupedOccurencesMap.containsKey(i)){
+            if (groupedOccurencesMap.containsKey(i)) {
                 int occurencesOfKey = groupedOccurencesMap.get(i) + 1;
                 groupedOccurencesMap.put(i, occurencesOfKey);
 
                 // check if this value is the new highest
-                if (occurencesOfKey > mostFrequentValueCount){
+                if (occurencesOfKey > mostFrequentValueCount) {
                     mostFrequentValueCount = occurencesOfKey;
                 }
             } else {
-                groupedOccurencesMap.put(i ,1);
+                groupedOccurencesMap.put(i, 1);
             }
         }
 
-        if(mostFrequentValueCount == 0){
+        if (mostFrequentValueCount == 0) {
             return null;
         }
 
         // now its all grouped, check if there is more than one mode
         List<Integer> multiModes = new ArrayList<Integer>();
-        if(groupedOccurencesMap.containsValue(mostFrequentValueCount)){
-            for(Map.Entry<Integer,Integer> entry : groupedOccurencesMap.entrySet()){
-                if(entry.getValue() == mostFrequentValueCount){
+        if (groupedOccurencesMap.containsValue(mostFrequentValueCount)) {
+            for (Map.Entry<Integer, Integer> entry : groupedOccurencesMap.entrySet()) {
+                if (entry.getValue() == mostFrequentValueCount) {
                     multiModes.add(entry.getKey());
                 }
             }
