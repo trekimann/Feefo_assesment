@@ -2,7 +2,7 @@ package feefo_assessment;
 
 import java.util.Random;
 
-import feefo_assessment.Array.ArrayManipulator;
+import feefo_assessment.OOP.ArrayManipulator;
 import feefo_assessment.OOP.JobStandardizer;
 
 public class App {
@@ -11,7 +11,6 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
 
         String jt = "Java engineer";
         JobStandardizer s = new JobStandardizer();

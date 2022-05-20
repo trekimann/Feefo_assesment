@@ -20,7 +20,9 @@ We are looking for a good project structure, evidence of good Object Orientated 
 
 ## 1.1 Standardizing Job Titles process
 
-Provided with a list of ideal (standardized) job titles, create a class that implements a process that returns the best match when provided with an input string.Concretely, given a standardized job titles list of “Architect", "Software engineer", "Quantity surveyor", and "Accountant", write a process that returns the standardized result for the input.
+Provided with a list of ideal (standardized) job titles, create a class that implements a process that returns the best match when provided with an input string.
+
+Concretely, given a standardized job titles list of “Architect", "Software engineer", "Quantity surveyor", and "Accountant", write a process that returns the standardized result for the input.
 
 |Input||Standardized|
 |--:|:-:|:--|
