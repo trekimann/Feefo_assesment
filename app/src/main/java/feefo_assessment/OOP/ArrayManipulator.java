@@ -47,23 +47,70 @@ public class ArrayManipulator {
 
     public void getStats(int[] input){
         
-        // sort the array
-        Arrays.sort(input);
-
-        int inputLength = input.length;
-        // Median is the middle number of a set, so just get the middle number in the array
-        int middleOfArray = (int) Math.ceil(inputLength / 2); // might be a fraction so round up
-        this.setMedian(input[middleOfArray]);
+        calculateMedian(input);
         
-        // Mean is the sum of a set divided by the number in the set
+        calculateMean(input);
+           
+        calculateMode(input);         
+        
+        calculateRange(input);
+       
+        //print stats
+        this.printStats();
+    }
+
+    /**
+     * Calculates the median of an array of int's
+     * Median is the middle number of a set, so this get the middle number in the array when sorted from smallest to largest.
+     * If the number of elements is even so there is no middle, then it returns the number to the right of the middle.
+     * input array is cloned as to not mutate the input should it be needed in its original form elsewhere.
+     * @param input array of int's
+     */
+    public void calculateMedian(int[] input) {
+        // clone then sort the array
+        int[] sorted = input.clone();
+        Arrays.sort(sorted);
+
+        int middleOfArray = (int) Math.ceil(sorted.length / 2); // might be a fraction so round up
+        this.setMedian(sorted[middleOfArray]);
+    }
+
+    /**
+     * Calculates the mean of an array of int's
+     * Mean is the sum of a set divided by the number in the set
+     * @param input array of int's
+     */
+    public void calculateMean(int[] input) {
         int sum = 0;
 
         for (int i : input) {
             sum = sum + i;
         }
-        this.setMean(sum / inputLength);
-           
-        // Mode of a set is the most frequent number in that set so group the array into a hashmap where the key is the number, value is the count.
+        this.setMean(sum / input.length);
+    }
+
+    /**
+     * Calculates the range of an array of int's
+     * Range of a set is the difference between the smallest and highest numbers in the set.
+     * input array is cloned as to not mutate the input should it be needed in its original form elsewhere.
+     * @param input array of int's
+     */
+    public void calculateRange(int[] input) {
+        // clone then sort the array
+        int[] sorted = input.clone();
+        Arrays.sort(sorted);
+
+        int smallest = sorted[0];
+        int largest = sorted[sorted.length - 1];
+        this.setRange(largest - smallest);
+    }
+    
+    /**
+     * Calculates the mode of an array of int's
+     * Mode of a set is the most frequent number in that set so group the array into a hashmap where the key is the number, value is the count.
+     * @param input array of int's
+     */
+    public void calculateMode(int[] input) {
         int mostFrequentValueCount = 0;
         
         HashMap<Integer,Integer> groupedOccurencesMap = new HashMap<Integer,Integer>();
@@ -81,14 +128,5 @@ public class ArrayManipulator {
                 groupedOccurencesMap.put(i ,1);
             }
         }
-         
-        
-        // Range of a set is the difference between the smallest and highest numbers in the set. Subtract the first element of the array from the last.
-        int smallest = input[0];
-        int largest = input[inputLength-1];
-        this.setRange(largest - smallest);
-       
-        //print stats
-        this.printStats();
     }
 }
