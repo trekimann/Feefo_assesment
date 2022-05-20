@@ -158,7 +158,7 @@ public class ArrayManipulator {
         }
 
         // now its all grouped, check if there is more than one mode
-        List<Integer> multiModes = new ArrayList();
+        List<Integer> multiModes = new ArrayList<Integer>();
         if(groupedOccurencesMap.containsValue(mostFrequentValueCount)){
             for(Map.Entry<Integer,Integer> entry : groupedOccurencesMap.entrySet()){
                 if(entry.getValue() == mostFrequentValueCount){
