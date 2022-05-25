@@ -100,24 +100,26 @@ We are not asking for a prototype solution, descriptions, diagrams and pseudo co
     * login is required for the user to save a new note
 * The web app maintains a user session
 
-1. Describe the high-level designShow the main note app components and the logical interactions that will fulfil the requirements.
-2. Web App UIProvide a wireframe design of the note web app that will fulfil the requirements.
+## 1. Describe the high-level design.
+Show the main note app components and the logical interactions that will fulfil the requirements.
+## 2. Web App UI.
+Provide a wireframe design of the note web app that will fulfil the requirements.
 
 * Consider what UI components are required and how these interact with the other components.
 * What (if any) validation is required?
 
-3. Data Model
+## 3. Data Model
 Describe how a note will be modelled
 * consider the required properties
 
-4. Restful API
+## 4. Restful API
 Describe the Restful API required to fulfil the note app.
 * how would the web app get the user’s notes?
 * how would the web app save a user note?
 * what are the URLs for the note resource(s)?
 * and verbs to expose the actions?
 
-5. Web Server
+## 5. Web Server
 Describe how the webserver implements that Restful API:
 * consider how each action will be implemented
 * what (if any) business logic is required?
