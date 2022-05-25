@@ -1,12 +1,12 @@
 # Web App Restful API System Design
 Index:
 
+* [Assumptions](#assumptions)
 * [High Level Design](#1-high-level-design)
 * [Web App UI](#2-web-app-ui)
 * [Data Model](#3-data-model)
 * [Restful API](#4-restful-api)
 * [Web Server](#5-web-server)
-* [Assumptions](#assumptions)
 
 ---
 # Assumptions
@@ -22,7 +22,7 @@ Index:
 
 ---
 ## 2. Web App UI
-As already stated, I am assuming a mobile first design. The [draw.io](https://app.diagrams.net/) files are included however png's are embedded below:
+As already stated, I am assuming a mobile first design. The [draw.io](https://app.diagrams.net/) files are [included](/app/src/main/java/feefo_assessment/ApiDesign/resources/drawIOfile/wire_frame.drawio) however png's are embedded below:
 
 ![App Wireframe](/app/src/main/java/feefo_assessment/ApiDesign/resources/images/wire_frame.png)
 
@@ -71,11 +71,13 @@ For example for each note:
 {
     "note_id" : "UNIQUE_ID_OF_NOTE",
     "extras" :
-        { "stared" : "false",
-          "paper_colour" : "yellow",
-          "created" : "01-01-1970",
-          "last_modified" : "25-05-2022",
-          "deleted" : "false" } ,
+        { 
+            "stared" : "false",
+            "paper_colour" : "yellow",
+            "created" : "01-01-1970",
+            "last_modified" : "25-05-2022",
+            "deleted" : "false" 
+        } ,
     "note_contents" : "The long ramblings of the notes maker go in here" 
 }
 ```
