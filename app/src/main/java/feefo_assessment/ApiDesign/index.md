@@ -22,10 +22,17 @@ Index:
 
 ---
 ## 2. Web App UI
-As already stated, I am assuming a mobile first design
+As already stated, I am assuming a mobile first design. The [draw.io](https://app.diagrams.net/) files are included however png's are embedded below:
+
+![App Wireframe](/app/src/main/java/feefo_assessment/ApiDesign/resources/images/wire_frame.png)
 
 ---
 ## 3. Data Model
+
+---
+## 4. Restful API
+The [assumptions](#assumptions) are that the user is logged in to view and change the notes, following along with this I assume that there is a token being created and passed around for the user which can be used instead of putting any user details in the url, json body or data model.
+
 When the web app is first called with a ```GET``` then an array of the logged in users notes is returned. This array is comprised of a way to identify the note, its title and the first n characters. These details can be used to inform the [Web App UI](#2-web-app-ui) and populate the page for the user. 
 For example for the collection of notes:
 
@@ -73,9 +80,6 @@ For example for each note:
 }
 ```
 
----
-## 4. Restful API
-The [assumptions](#assumptions) are that the user is logged in to view and change the notes, following along with this I assume that there is a token being created and passed around for the user which can be used instead of putting any user details in the url, json body or data model.
 ### URLs
 Utilising the [verbs](#verbs) it should be possible to use a single URL to perform the retrieval, addition and deletion of a users notes. Something simple like:
 ```https://feefoo.notes.app/V{apiVersion}/notes```
@@ -91,7 +95,7 @@ This would be for updating the note and deleting it.
 ```POST``` would be used for the creation of a new note.
 
 #### PATCH
-```PATCH``` Would be used for updating a notes contents or extras. This would potentially allow for lower bandwidth than a ```PUT``` or ```POST```. It
+```PATCH``` Would be used for updating a notes contents or extras. This would potentially allow for lower bandwidth than a ```PUT``` or ```POST```.
 #### GET
 When a user first logs in the app should perform a ```GET``` against the [URL](#urls) to retrieve a list of the logged in users notes which can then be used to populate the UI with a list of the notes and their titles. When a user clicks on a specific note another ```GET``` would be performed with the notes id as a parameter of the URL.
 
