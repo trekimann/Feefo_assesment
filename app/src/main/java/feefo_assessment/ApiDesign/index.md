@@ -31,7 +31,7 @@ Not shown is a navigation drawer which would pull down from under the logo/avata
 ---
 ## 3. Data Model
 A user would have a group of notes connected with them. Each note is a collection of values describing any customisation, contents and current status.
-The users ID would be a primary key against which a list of note id's are linked. The notes would be stored with the various flags for deletion, creation and modification in the DB as varchar and the contents of the note as text or mediumtext depending on the requirements for max note size.
+The users ID would be a primary key against which a list of note id's are linked. The notes would be stored with the various flags for deletion, creation and modification in the DB as varchar, boolean and other suitable types and the contents of the note as text or mediumtext depending on the requirements for max note size.
 
 ---
 ## 4. Restful API
@@ -107,3 +107,7 @@ When a user first logs in the app should perform a ```GET``` against the [URL](#
 
 ---
 ## 5. Web Server
+
+The webserver could use Spring boot. It would need to ba able to contact a database directly or though another API to be able to save the note data. If there were images included with the notes the solution could use something like Amazon's S3 or Azure. If there were pricing plans for the application then checking of a users entitlement could be done in a filter or interceptor before the controller and an appropriate error could be sent back to the client to prompt deletion of old notes or buying a new plan. 
+
+Each verb could be a separate method to aid in maintainability, or more modular than that by placing each one in a separate class. This would allow simple transition from old versions to new ones with minimal changes to the controller.
