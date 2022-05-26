@@ -20,6 +20,25 @@ Index:
 ---
 ## 1. High Level Design
 
+### Viewing Note from login
+* User logs in
+    * Api call which provides OAuth or similar token
+* Client calls API to get a list of notes
+* Api sends json list back to client
+* Client renders first screen
+* User clicks on existing note
+    * Client sends API request for notes full details
+        * Server sends off note id to retrieve contents
+    * Server sends back payload with details
+    * Client renders note
+
+### Saving note
+* User clicks to save note
+    * Server checks entitlement to save note
+        * If not allowed, send error to client
+    * Logic for saving new note or updating existing happens here
+    * 
+
 ---
 ## 2. Web App UI
 As already stated, I am assuming a mobile first design. The [draw.io](https://app.diagrams.net/) files are [included](/app/src/main/java/feefo_assessment/ApiDesign/resources/drawIOfile/wire_frame.drawio) however png's are embedded below:
