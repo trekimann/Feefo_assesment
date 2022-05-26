@@ -43,7 +43,7 @@ Index:
 ## 2. Web App UI
 As already stated, I am assuming a mobile first design. The [draw.io](https://app.diagrams.net/) files are [included](/app/src/main/java/feefo_assessment/ApiDesign/resources/drawIOfile/wire_frame.drawio) however png's are embedded below:
 
-![App Wireframe](/app/src/main/java/feefo_assessment/ApiDesign/resources/images/wire_frame.png)
+![App Wireframe](/app/src/main/resources/images/wire_frame.png)
 
 Not shown is a navigation drawer which would pull down from under the logo/avatar section at the top.
 
